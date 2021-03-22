@@ -22,4 +22,13 @@ public class PointTest {
         double out = a.distance(b);
         Assert.assertEquals(expected, out, 0.01);
     }
+
+    @Test
+    public void distance3d() {
+        double expected  = 10;
+        Point aD = new Point(12, 9, 0);
+        Point bD = new Point(4,3,0);
+        double out = aD.distance3d(bD);
+        Assert.assertEquals(expected, out, 0.01);
+    }
 }
