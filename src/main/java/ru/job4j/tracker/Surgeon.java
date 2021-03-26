@@ -7,7 +7,9 @@ public class Surgeon extends Doctor {
     private float cost;
 
     public Surgeon() {
-
+        this.name =  null;
+        this.level = -1;
+        this.cost = -1;
     }
 
     public Surgeon(String name, int value1, float value2 ) {

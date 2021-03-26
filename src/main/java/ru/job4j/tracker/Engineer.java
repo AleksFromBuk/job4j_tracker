@@ -7,7 +7,9 @@ public class Engineer extends Profession {
     private float cost;
 
     public Engineer() {
-
+        this.name = null;
+        this.level = -1;
+        this.cost = -1F;
     }
 
     public Engineer(String name, int value1, float value2 ) {

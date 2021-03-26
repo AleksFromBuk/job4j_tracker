@@ -7,7 +7,9 @@ public class Builder {
     private float cost;
 
     public Builder() {
-
+        this.name = null;
+        this.level = -1;
+        this.cost = -1F;
     }
 
     public Builder(String name, int value1, float value2 ) {
