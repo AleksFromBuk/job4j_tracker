@@ -8,10 +8,7 @@ public class Tracker {
     private int size = 0;
 
     public int lastUsingIds() {
-        if(ids != 1) {
-            return ids - 1;
-        }
-        return ids;
+        return ids == 1 ? 1 : ids - 1;
     }
 
     public Item add(Item item) {
@@ -20,17 +17,23 @@ public class Tracker {
         return item;
     }
 
-
-    protected Item findById(int id) {
-        Item rsl = null;
+    private int indexOf(int id) {
+        int rsl = -1;
         for (int index = 0; index < size; index++) {
-            Item item = items[index];
-            if (item.getId() == id) {
-                rsl = item;
+            if (items[index].getId() == id) {
+                rsl = index;
                 break;
             }
         }
         return rsl;
+    }
+
+
+    public Item findById(int id) {
+        /* Находим индекс */
+        int index = indexOf(id);
+        /* Если индекс найден возвращаем item, иначе null */
+        return index != -1 ? items[index] : null;
     }
 
     public Item[] findAll() {
@@ -54,6 +57,16 @@ public class Tracker {
             }
         }
         rsl = Arrays.copyOf(rsl, newSize);
+        return rsl;
+    }
+
+    public boolean replace(int id, Item item) {
+        boolean rsl = false;
+        if (this.findById(id) != null) {
+            item.setId(this.findById(id).getId());
+            this.findById(id).setName(item.getName());
+            rsl = true;
+        }
         return rsl;
     }
 }
