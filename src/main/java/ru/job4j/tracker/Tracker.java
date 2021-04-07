@@ -28,7 +28,6 @@ public class Tracker {
         return rsl;
     }
 
-
     public Item findById(int id) {
         int index = indexOf(id);
         return index != -1 ? items[index] : null;
@@ -60,5 +59,23 @@ public class Tracker {
             rsl = true;
         }
         return rsl;
+    }
+
+    public boolean delete(int id) {
+        int index = indexOf(id);
+        if(index != -1) {
+            items[index] = null;
+            if(index == items.length - 1) {
+                size--;
+                return true;
+            } else {
+                System.arraycopy(items, index, items, index + 1, size - index);
+                items[size] = null;
+                size--;
+                return true;
+            }
+        } else {
+            return false;
+        }
     }
 }
