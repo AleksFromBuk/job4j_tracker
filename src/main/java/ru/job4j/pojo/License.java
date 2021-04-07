@@ -41,13 +41,19 @@ public class License {
         this.created = created;
     }
 
+    // сочетание alt + insert, выбираем equals и hashcode и
+    // дальше все по умолчанию, не наод ничего дополнительно кликать
+
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         License license = (License) o;
-        return owner != null && owner.equals(license.owner) &&  model != null && model.equals(license.model)
-                && code != null &&  code.equals(license.code) && created != null && created.equals(license.created);
+        return Objects.equals(owner, license.owner)
+                && Objects.equals(model, license.model)
+                && Objects.equals(code, license.code)
+                && Objects.equals(created, license.created);
     }
 
     @Override
