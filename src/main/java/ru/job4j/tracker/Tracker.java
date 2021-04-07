@@ -62,29 +62,29 @@ public class Tracker {
     }
 
     public boolean delete(int id) {
-//        int index = indexOf(id);
-//        if(index != -1) {
-//            items[index] = null;
-//            if(index == items.length - 1) {
-//                size--;
-//                return true;
-//            } else {
-//                System.arraycopy(items, index, items, index + 1, size - index);
-//                items[size] = null;
-//                size--;
-//                return true;
-//            }
-//        } else {
-//            return false;
-//        }
         int index = indexOf(id);
-        if (index != - 1) {
+        if(index != -1) {
             items[index] = null;
-            System.arraycopy(items, index + 1, items, index, size - index);
-            size--;
-            return true;
+            if(index == items.length - 1) {
+                size--;
+                return true;
+            } else {
+                System.arraycopy(items, index, items, index + 1, size - index);
+                items[size] = null;
+                size--;
+                return true;
+            }
+        } else {
+            return false;
         }
-        return false;
+//        int index = indexOf(id);
+//        if (index != - 1) {
+//            items[index] = null;
+//            System.arraycopy(items, index + 1, items, index, size - index);
+//            size--;
+//            return true;
+//        }
+//        return false;
     }
 
     public static void main(String[] args) {
@@ -100,7 +100,7 @@ public class Tracker {
         }
         System.out.println();
         if(tracker.delete(5)) {
-            for ( Item ob : valid) {
+            for ( Item ob : tracker.findAll()) {
                 System.out.println(ob.getName() + '\t' + ob.getId());
 
             }
