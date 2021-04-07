@@ -25,5 +25,9 @@ public class StartUI {
         Item elementSecond = example.findById(example.lastUsingIds());
         System.out.println(elementSecond.getId());
 
+        System.out.println("************** example for toStringMethod **************");
+        Item once = new Item();
+        System.out.println(once);
+
     }
 }

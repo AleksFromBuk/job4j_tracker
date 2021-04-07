@@ -54,6 +54,14 @@ public class Item {
 
     }
 
+    @Override
+    public String toString() {
+        return "Item{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                '}';
+    }
+
     public Item(int i, String filed_name) {
         this.id = i;
         this.name = filed_name;
