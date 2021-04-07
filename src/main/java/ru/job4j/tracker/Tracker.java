@@ -3,7 +3,7 @@ package ru.job4j.tracker;
 import java.util.Arrays;
 
 public class Tracker {
-    private final Item[] items = new Item[100];
+    private final Item[] items = new Item[5];
     private int ids = 1;
     private int size = 0;
 
@@ -62,20 +62,51 @@ public class Tracker {
     }
 
     public boolean delete(int id) {
+//        int index = indexOf(id);
+//        if(index != -1) {
+//            items[index] = null;
+//            if(index == items.length - 1) {
+//                size--;
+//                return true;
+//            } else {
+//                System.arraycopy(items, index, items, index + 1, size - index);
+//                items[size] = null;
+//                size--;
+//                return true;
+//            }
+//        } else {
+//            return false;
+//        }
         int index = indexOf(id);
-        if(index != -1) {
+        if (index != - 1) {
             items[index] = null;
-            if(index == items.length - 1) {
-                size--;
-                return true;
-            } else {
-                System.arraycopy(items, index, items, index + 1, size - index);
-                items[size] = null;
-                size--;
-                return true;
+            System.arraycopy(items, index + 1, items, index, size - index);
+            size--;
+            return true;
+        }
+        return false;
+    }
+
+    public static void main(String[] args) {
+        Tracker tracker = new Tracker();
+        for (int i = 1; i <= 5; i++) {
+            Item bug = new Item();
+            bug.setName("Bug");
+            tracker.add(bug);
+        }
+        Item[] valid = tracker.findByName("Bug");
+        for ( Item ob : valid) {
+            System.out.println(ob.getName() + '\t' + ob.getId());
+        }
+        System.out.println();
+        if(tracker.delete(5)) {
+            for ( Item ob : valid) {
+                System.out.println(ob.getName() + '\t' + ob.getId());
+
             }
-        } else {
-            return false;
+        }
+        else {
+            System.out.println("Error...");
         }
     }
 }
