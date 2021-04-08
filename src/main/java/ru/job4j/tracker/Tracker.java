@@ -3,7 +3,7 @@ package ru.job4j.tracker;
 import java.util.Arrays;
 
 public class Tracker {
-    private final Item[] items = new Item[5];
+    private final Item[] items = new Item[100];
     private int ids = 1;
     private int size = 0;
 
@@ -64,12 +64,11 @@ public class Tracker {
     public boolean delete(int id) {
         int index = indexOf(id);
         if(index != -1) {
-            items[index] = null;
-            if(index == items.length - 1) {
+           if(index == items.length - 1) {
                 size--;
                 return true;
             } else {
-                System.arraycopy(items, index, items, index + 1, size - index);
+                System.arraycopy(items, index + 1, items, index, size - index);
                 items[size] = null;
                 size--;
                 return true;
@@ -77,6 +76,7 @@ public class Tracker {
         } else {
             return false;
         }
+
 //        int index = indexOf(id);
 //        if (index != - 1) {
 //            items[index] = null;
@@ -89,19 +89,22 @@ public class Tracker {
 
     public static void main(String[] args) {
         Tracker tracker = new Tracker();
-        for (int i = 1; i <= 5; i++) {
+        for (int i = 1; i <= 100; i++) {
+
             Item bug = new Item();
             bug.setName("Bug");
             tracker.add(bug);
         }
         Item[] valid = tracker.findByName("Bug");
+        int i = 1;
         for ( Item ob : valid) {
-            System.out.println(ob.getName() + '\t' + ob.getId());
+            System.out.println(ob.getName() + '\t' + ob.getId() + '\t' + i++);
         }
         System.out.println();
-        if(tracker.delete(5)) {
+        i = 1;
+        if(tracker.delete(100)) {
             for ( Item ob : tracker.findAll()) {
-                System.out.println(ob.getName() + '\t' + ob.getId());
+                System.out.println(ob.getName() + '\t' + ob.getId() + '\t' + i++);
 
             }
         }
