@@ -63,28 +63,13 @@ public class Tracker {
 
     public boolean delete(int id) {
         int index = indexOf(id);
-        if(index != -1) {
-           if(index == items.length - 1) {
-                size--;
-                return true;
-            } else {
-                System.arraycopy(items, index + 1, items, index, size - index);
-                items[size] = null;
-                size--;
-                return true;
-            }
-        } else {
-            return false;
+        if (index != - 1) {
+            items[index] = null;
+            size--;
+            System.arraycopy(items, index + 1, items, index, size - index);
+            return true;
         }
-
-//        int index = indexOf(id);
-//        if (index != - 1) {
-//            items[index] = null;
-//            System.arraycopy(items, index + 1, items, index, size - index);
-//            size--;
-//            return true;
-//        }
-//        return false;
+        return false;
     }
 
     public static void main(String[] args) {
@@ -102,7 +87,7 @@ public class Tracker {
         }
         System.out.println();
         i = 1;
-        if(tracker.delete(100)) {
+        if(tracker.delete(99)) {
             for ( Item ob : tracker.findAll()) {
                 System.out.println(ob.getName() + '\t' + ob.getId() + '\t' + i++);
 
