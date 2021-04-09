@@ -47,8 +47,6 @@ public class Tracker {
         }
         return Arrays.copyOf(rsl, newSize);
     }
-// ctrl + /
-//this.findById(id) .setName(item.getName());
 
     public boolean replace(int id, Item item) {
         boolean rsl = false;
@@ -63,13 +61,13 @@ public class Tracker {
 
     public boolean delete(int id) {
         int index = indexOf(id);
-        if (index != - 1) {
-            items[index] = null;
-            size--;
-            System.arraycopy(items, index + 1, items, index, size - index);
-            return true;
-        }
-        return false;
+        if (index  == - 1){
+            return false;
+         }
+        items[index] = null;
+        size--;
+        System.arraycopy(items, index + 1, items, index, size - index);
+        return true;
     }
 
     public static void main(String[] args) {
