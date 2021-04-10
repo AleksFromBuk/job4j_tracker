@@ -13,11 +13,8 @@ public class Matches {
             System.out.println(player + " введите число от 1 до 3: ");
             int matches = Integer.parseInt(input.nextLine());
             turn = !turn;
-            /* Остальная логика игры. */
-            {
-                count -= matches;
-                System.out.println("спичек осталось " + count);
-            }
+            count -= matches;
+            System.out.println("спичек осталось " + count);
         }
         if (!turn) {
             System.out.println("Выиграл первый игрок");
