@@ -46,7 +46,7 @@ package ru.job4j.tracker;
 
 import java.util.Objects;
 
-public class Item {
+public  class Item {
     private int id;
     private String name;
 
