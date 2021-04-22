@@ -21,18 +21,13 @@ public class StartUI {
                 System.out.println();
             } else if (select == 2) {
                 int index = input.askInt("enter id item: ");
-                if (tracker.findById(index) == null) {
-                    System.out.println("element by id not found...");
+                Item newElement = new Item(input.askStr("enter name of the element to replace with: "));
+                if (tracker.replace(index, newElement)) {
+                    System.out.println("complete");
                     System.out.println();
                 } else {
-                    Item newElement = new Item(input.askStr("enter name of the element to replace with: "));
-                    if (tracker.replace(index, newElement)) {
-                        System.out.println("complete");
-                        System.out.println();
-                    } else {
-                        System.out.println("operation failed...");
-                        System.out.println();
-                    }
+                    System.out.println("operation failed...");
+                    System.out.println();
                 }
             } else if (select == 3) {
                 int index = input.askInt("enter id item: ");
