@@ -7,10 +7,6 @@ public class Tracker {
     private int ids = 1;
     private int size = 0;
 
-    public int lastUsingIds() {
-        return ids == 1 ? 1 : ids - 1;
-    }
-
     public Item add(Item item) {
         item.setId(ids++);
         items[size++] = item;
@@ -33,7 +29,8 @@ public class Tracker {
         return index != -1 ? items[index] : null;
     }
 
-    public Item[] findAll() {
+    public
+    Item[] findAll() {
         return Arrays.copyOf(items, size);
     }
 

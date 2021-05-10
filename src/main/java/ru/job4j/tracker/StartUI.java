@@ -11,6 +11,21 @@ public class StartUI {
     }
 
     public static void showAllItems(Input input,Tracker tracker) {
+//        int select = input.askInt("enter number: ");
+//        Item tmp = null;
+//        switch (select) {
+//            case 0 :
+//                tmp = tracker.findAll()[0];
+//                break;
+//            case 1 :
+//                tmp = tracker.findAll()[1];
+//                break;
+//            case 2 :
+//                tmp = tracker.findAll()[2];
+//                break;
+//        }
+//        System.out.println(tmp);
+
         Item[] inf = tracker.findAll();
         for(Item i : inf) {
             System.out.println(i);
@@ -20,7 +35,8 @@ public class StartUI {
 
     public static void editItem(Input input, Tracker tracker) {
         int index = input.askInt("enter id item: ");
-        Item newElement = new Item(input.askStr("enter name of the element to replace with: "));
+        String name = input.askStr("enter name of the element to replace with: ");
+        Item newElement = new Item(name);
         if (tracker.replace(index, newElement)) {
             System.out.println("complete");
         } else {
