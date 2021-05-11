@@ -16,10 +16,4 @@ public class ConsoleInput implements  Input {
     public int askInt(String question) {
         return Integer.parseInt(askStr(question));
     }
-
-    @Override
-    public String GetName() {
-        return null;
-    }
-
 }

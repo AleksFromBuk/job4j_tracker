@@ -9,7 +9,6 @@ public class StubInput implements Input  {
         System.out.println();
     }
 
-
     @Override
     public String askStr(String question) {
         return answers[position++];
@@ -18,10 +17,5 @@ public class StubInput implements Input  {
     @Override
     public int askInt(String question) {
         return Integer.parseInt(askStr(question));
-    }
-
-    @Override
-    public String GetName() {
-        return null;
     }
 }
