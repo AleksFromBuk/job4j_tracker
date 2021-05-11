@@ -6,7 +6,6 @@ public class StubInput implements Input  {
 
     public StubInput(String[] answers) {
         this.answers = answers;
-        System.out.println();
     }
 
     @Override
