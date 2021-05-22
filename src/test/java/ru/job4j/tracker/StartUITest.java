@@ -38,10 +38,8 @@ public class StartUITest {
         Tracker tracker = new Tracker();
         Item item = new Item("only current element");
         tracker.add(item);
-
         String answer[] = {String.valueOf(item.getId())};
-
         StartUI.deleteItem(new StubInput(answer), tracker);
-        assertThat(tracker.findById(item.getId()), Matchers.is(nullValue()));
+        assertNull(tracker.findById(item.getId()));
     }
 }
