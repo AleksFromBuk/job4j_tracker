@@ -7,6 +7,23 @@ public class Tracker {
     private int ids = 1;
     private int size = 0;
 
+    public Item add(Item item) {
+        item.setId(ids++);
+        items[size++] = item;
+        return item;
+    }
+
+    public boolean delete(int id) {
+        int index = indexOf(id);
+        boolean result = index != -1;
+        if(result) {
+            System.arraycopy(items, index + 1, items, index, size - index - 1);
+            items[size - 1] = null;
+            size--;
+        }
+        return result;
+    }
+
     private int indexOf(int id) {
         int rsl = -1;
         for(int index = 0; index < size; index++) {
@@ -16,12 +33,6 @@ public class Tracker {
             }
         }
         return rsl;
-    }
-
-    public Item add(Item item) {
-        item.setId(ids++);
-        items[size++] = item;
-        return item;
     }
 
 
