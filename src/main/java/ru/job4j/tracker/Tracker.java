@@ -67,16 +67,28 @@ public class Tracker {
         return Arrays.copyOf(items, size);
     }
 
+//    public Item[] findByName(String key) {
+//        int newSize = 0;
+//        Item[] rsl = new Item[size];
+//        for(int i = 0; i < size; i++) {
+//            if (items[i] != null && key.equals(items[i].getName())) {
+//                rsl[newSize++] = items[i];
+//            }
+//        }
+//        rsl = Arrays.copyOf(rsl, newSize);
+//        return rsl;
+//    }
+
     public Item[] findByName(String key) {
-        int newSize = 0;
-        Item[] rsl = new Item[size];
-        for(int i = 0; i < size; i++) {
-            if (items[i] != null && key.equals(items[i].getName())) {
-                rsl[newSize++] = items[i];
+        Item[] result = new Item[size];
+        int count = 0;
+        for (int i = 0; i < size; i++) {
+            if (items[i].getName().equals(key)) {
+                result[count] = items[i];
+                count++;
             }
         }
-        rsl = Arrays.copyOf(rsl, newSize);
-        return rsl;
+        return Arrays.copyOf(result, count);
     }
 
     public boolean replace(int id, Item item) {
