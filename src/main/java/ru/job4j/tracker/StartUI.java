@@ -48,8 +48,17 @@ public class StartUI {
                 } else {
                     System.out.println("Ошибка удаления заявки.");
                 }
-            }
-            else if (select == 6) {
+            } else if(select == 4) {
+                System.out.println("=== Find by id ===");
+                System.out.print("Enter id: ");
+                int id = Integer.parseInt(scanner.nextLine());
+                Item item = tracker.findById(id);
+                if (item != null) {
+                    System.out.println(item);
+                } else {
+                    System.out.println("Заявка с введенным id: " + id + " не найдена.");
+                }
+            } else if (select == 6) {
                 System.out.println("Пользователь выбрал: " + select);
                 run = false;
             }
@@ -62,11 +71,11 @@ public class StartUI {
                 "Delete item", "Find item by id", "Find items by name",
                 "Exit Program"
         };
-        System.out.println("Menu:");
+        System.out.println();
+        System.out.println( '\n' + "Menu:");
         for(int i = 0; i < menu.length; i++) {
             System.out.println(i + ". " + menu[i]);
         }
-
     }
 
     public static void main(String[] args) {
