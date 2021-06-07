@@ -11,7 +11,6 @@ public class ShowAllItems implements UserAction {
         Item[] inf = tracker.findAll();
         if (inf.length == 0) {
             System.out.println("items not found...");
-            return true;
         } else {
             for (Item i : inf) {
                 System.out.println(i);
