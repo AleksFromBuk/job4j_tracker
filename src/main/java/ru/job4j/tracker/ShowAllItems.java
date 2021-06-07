@@ -9,10 +9,15 @@ public class ShowAllItems implements UserAction {
     @Override
     public boolean execute(Input input, Tracker tracker) {
         Item[] inf = tracker.findAll();
-        for (Item i : inf) {
-            System.out.println(i);
+        if (inf.length == 0) {
+            System.out.println("items not found...");
+            return true;
+        } else {
+            for (Item i : inf) {
+                System.out.println(i);
+            }
+            System.out.println();
+            return true;
         }
-        System.out.println();
-        return true;
     }
 }
