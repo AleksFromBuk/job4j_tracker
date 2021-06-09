@@ -1,6 +1,6 @@
 package ru.job4j.tracker;
 
-public class editItem implements UserAction {
+public class EditItem implements UserAction {
     @Override
     public String name() {
         return "=== editItem ===";
