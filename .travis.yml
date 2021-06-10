@@ -18,7 +18,10 @@ notifications:
       - layko1982@mail.ru
     on_success: never # default: change
     on_failure: always # default: always
+<<<<<<< HEAD
 # ---------------------------------
+=======
+>>>>>>> origin/master
 env:
   global:
     - CODECOV_TOKEN="d6a75281-7203-4f14-b7a5-01d604398a84"
