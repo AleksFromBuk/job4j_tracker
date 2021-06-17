@@ -21,7 +21,7 @@ public class EditItem implements UserAction {
         } else {
             out.println("operation failed...");
         }
-        out.println();
+        out.println("");
         return true;
     }
 }

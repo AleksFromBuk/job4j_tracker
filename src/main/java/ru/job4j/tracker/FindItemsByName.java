@@ -23,7 +23,7 @@ public class FindItemsByName implements UserAction {
                 out.println(i);
             }
         }
-        out.println();
+        out.println("");
         return true;
     }
 }
