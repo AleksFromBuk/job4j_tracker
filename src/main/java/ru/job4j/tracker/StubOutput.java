@@ -14,7 +14,14 @@ public class StubOutput implements Output{
     }
 
     @Override
+    public void println() {
+        buffer.append(System.lineSeparator());
+    }
+
+    @Override
     public String toString() {
         return buffer.toString();
     }
 }
+
+
