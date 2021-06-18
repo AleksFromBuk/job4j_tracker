@@ -23,7 +23,7 @@ public class ShowAllItems implements UserAction {
                 out.println(i);
             }
         }
-        out.println("");
+        //out.println("");
         return true;
     }
 }
