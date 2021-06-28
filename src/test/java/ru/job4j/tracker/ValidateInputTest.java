@@ -37,12 +37,14 @@ public class ValidateInputTest {
         );
         ValidateInput input = new ValidateInput(out, in);
 
-        input.askInt("Enter menu:");
-        input.askInt("Enter menu:");
-        input.askInt("Enter menu:");
-        input.askInt("Enter menu:");
-        String[] data = {"0" , "1", "2", "3"};
-        assertThat(data, is(new String[]{"0", "1", "2", "3"}));
+
+        int[] data = new int[4];
+        int selects = 0, t = 0;
+        while(t < 4) {
+            data[t++] = input.askInt("Enter menu:");
+        }
+
+        assertThat(data, is(new int[]{0, 1, 2, 3}));
     }
 
     @Test
