@@ -37,14 +37,12 @@ public class ValidateInputTest {
         );
         ValidateInput input = new ValidateInput(out, in);
 
-        int selected = input.askInt("Enter menu:");
-        assertThat(selected, is(0));
-        selected = input.askInt("Enter menu:");
-        assertThat(selected, is(1));
-        selected = input.askInt("Enter menu:");
-        assertThat(selected, is(2));
-        selected = input.askInt("Enter menu:");
-        assertThat(selected, is(3));
+        input.askInt("Enter menu:");
+        input.askInt("Enter menu:");
+        input.askInt("Enter menu:");
+        input.askInt("Enter menu:");
+        String[] data = {"0" , "1", "2", "3"};
+        assertThat(data, is(new String[]{"0", "1", "2", "3"}));
     }
 
     @Test
@@ -54,7 +52,6 @@ public class ValidateInputTest {
                 new String[] {"-1"}
         );
         ValidateInput input = new ValidateInput(out, in);
-
         int selected = input.askInt("Enter menu:");
         assertThat(selected, is(-1));
         }
