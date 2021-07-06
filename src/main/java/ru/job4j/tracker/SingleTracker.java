@@ -3,10 +3,6 @@ package ru.job4j.tracker;
 public final class SingleTracker {
 
     private static SingleTracker instance = null;
-
-    private String[] messages = new String[1000];
-    private int index = 0;
-
     private static Tracker tracker = new Tracker();
 
     private SingleTracker() {
@@ -17,14 +13,6 @@ public final class SingleTracker {
             instance = new SingleTracker();
         }
         return instance;
-    }
-
-    public void ass(String message) {
-        messages[index++] = message;
-    }
-
-    public void someActions() {
-        // фиг знает, что конкретно можно было бы сделать
     }
 
     public Item add(Item item) {
