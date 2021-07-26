@@ -9,7 +9,7 @@ public class UsageArrayList {
         names.add("Petr");
         names.add("Ivan");
         names.add("Stepan");
-        for (Object val: names) {
+        for (String val: names) {
             System.out.println(val);
         }
 
