@@ -41,5 +41,17 @@ public class PriorityQueueTest {
         assertThat(result.getDesc(), is("middle"));
     }
 
+    @Test
+    public void whenInsertBetween () {
+        PriorityQueue queue = new PriorityQueue();
+        queue.put(new Task("low", 4));
+        queue.put(new Task("urgent", 1));
+        queue.put(new Task("middle", 3));
+        queue.put(new Task("middle", 2));
+        queue.take();
+        Task result = queue.take();
+        assertThat(result.getDesc(), is("middle"));
+    }
+
 
 }
