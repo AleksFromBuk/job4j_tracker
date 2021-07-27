@@ -13,5 +13,8 @@ public class UsageArrayList {
             System.out.println(val);
         }
 
+        System.out.println((7 + 3 - 1)/3);
+        System.out.println((5 + 5 - 1)/5);
+
     }
 }
