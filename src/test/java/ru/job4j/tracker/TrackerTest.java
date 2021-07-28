@@ -6,7 +6,7 @@
 //import static org.hamcrest.core.IsNull.nullValue;
 //
 //public class TrackerTest {
-//    /*@Test
+//    @Test
 //    public void whenAddNewItemThenTrackerHasSameItem() {
 //        Tracker tracker = new Tracker();
 //        Item item = new Item();
@@ -15,7 +15,7 @@
 //        Item result = tracker.findById(item.getId());
 //        assertThat(result.getName(), is(item.getName()));
 //    }
-//    */
+//
 //
 //    @Test
 //    public void whenReplace() {
