@@ -11,6 +11,7 @@ public class UniqueTextTest {
     public void isEquals() {
         String origin = "My cat eats a mouse and milk";
         String text = "My cat eats milk and a mouse";
+
         assertThat(UniqueText.isEquals(origin, text), is(true));
     }
 
@@ -18,6 +19,7 @@ public class UniqueTextTest {
     public void isNotEquals() {
         String origin = "Mu cat eats a mouse";
         String text = "A mouse is eaten by a cat";
+
         assertThat(UniqueText.isEquals(origin, text), is(false));
     }
 }
