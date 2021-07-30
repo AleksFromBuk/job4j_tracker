@@ -21,8 +21,8 @@ public class PassportOfficeTest {
         Citizen second = new Citizen("2f44a", "Qwerty Ytrewq");
 
         PassportOffice office = new PassportOffice();
-        office.add(first);
-        assertThat(office.add(second), is(false));
+        boolean add = office.add(first);
+        assertFalse(office.add(second));
     }
 
 
