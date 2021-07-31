@@ -10,9 +10,6 @@ public class BankService {
 
     public void addUser(User user) {
         users.putIfAbsent(user, new ArrayList<Account>());
-//        if (!users.containsKey(user)) {
-//            users.put(user, new ArrayList<Account>());
-//        }
     }
 
     public void addAccount(String passport, Account account) {
@@ -20,7 +17,6 @@ public class BankService {
         if (tmp != null && !users.get(tmp).contains(account)) {
             users.get(tmp).add(account);
         }
-        return;
     }
 
     public User findByPassport(String passport) {
@@ -52,13 +48,15 @@ public class BankService {
         User dest = findByPassport(destPassport);
         if ( src != null && dest != null) {
             Account srcacc = findByRequisite(srcPassport, srcRequisite);
-            double srcbal = srcacc.getBalance();
-            if (srcbal >= amount) {
-                srcacc.setBalance(srcbal - amount);
-                Account destacc =  findByRequisite(destPassport, destRequisite);
-                double currentbal = destacc.getBalance();
-                destacc.setBalance(currentbal + amount);
-                rsl = true;
+            Account destacc =  findByRequisite(destPassport, destRequisite);
+            if(srcacc != null && destacc != null) {
+                double srcbal = srcacc.getBalance();
+                if (srcbal >= amount) {
+                    srcacc.setBalance(srcbal - amount);
+                    double currentbal = destacc.getBalance();
+                    destacc.setBalance(currentbal + amount);
+                    rsl = true;
+                }
             }
         }
         return rsl;
