@@ -64,17 +64,4 @@ public  class Item implements Comparable<Item> {
 
         return Integer.compare(id, another.id);
     }
-
-//    public static void main(String args[]) {
-//        List<Item> obj = Arrays.asList(
-//                new Item(3,"Test1"),
-//                new Item(2,"Test2"),
-//                new Item(1,"Test3")
-//        );
-//        System.out.println(obj);
-//        Collections.sort(obj);
-//        System.out.println(obj);
-//        Collections.sort(obj, Collections.reverseOrder());
-//        System.out.println(obj);
-//    }
 }
