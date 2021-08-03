@@ -17,9 +17,7 @@ public class User implements Comparable<User> {
         if (rsl == 0) {
             return Integer.compare(this.age, o.age);
         }
-        else {
-            return rsl;
-        }
+        return rsl;
     }
 
     @Override
