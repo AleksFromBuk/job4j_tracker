@@ -18,7 +18,7 @@ public class LexSortTest {
                 "2. Task.",
                 "10. Task."
         };
-        Arrays.sort(input, new LexSort());
+        Arrays.sort(input, new LexSort_brutFore());
         assertThat(input, is(out));
     }
 
@@ -36,7 +36,7 @@ public class LexSortTest {
                 "1.2.2. Task.",
                 "2.1. Task"
         };
-        Arrays.sort(input, new LexSort());
+        Arrays.sort(input, new LexSort_brutFore());
         assertThat(input, is(out));
     }
 
@@ -78,7 +78,7 @@ public class LexSortTest {
                 "6.5.1. Task.",
                 "6.5.2. Task."
         };
-        Arrays.sort(input, new LexSort());
+        Arrays.sort(input, new LexSort_brutFore());
         assertThat(input, is(out));
     }
 }

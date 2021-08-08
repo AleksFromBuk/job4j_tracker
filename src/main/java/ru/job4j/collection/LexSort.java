@@ -1,47 +1,22 @@
 package ru.job4j.collection;
 
+import java.util.Arrays;
 import java.util.Comparator;
+import java.util.Scanner;
 
 public class LexSort implements Comparator<String> {
+
     @Override
     public int compare(String left, String right) {
-        StringBuilder leftTmp = new StringBuilder();
-        String rightTmp = "";
-        int lid = 0;
-        int rid = 0;
-        char locLeft = 0;
-        char locRight = 0;
-        int rslFormCompare = 0;
-
-        while(locLeft != ' ' && locRight != ' ' && rslFormCompare == 0) {
-            while((locLeft = left.charAt(lid)) != ' ') {
-                lid++;
-                if (locLeft == '.') {
-                    break;
-                }
-                leftTmp.append(locLeft);
-            }
-            while((locRight = right.charAt(rid)) != ' ') {
-                rid++;
-                if (locRight == '.') {
-                    break;
-                }
-                rightTmp += locRight;
-            }
-            if(leftTmp.length() != rightTmp.length()) {
-                return leftTmp.length() - rightTmp.length();
-            }
-            else {
-                rslFormCompare = leftTmp.toString().compareTo(rightTmp);
+        String[] first = left.split("\\. ");
+        String[] second = right.split("\\. ");
+        String[] a = first[0].split("\\.");
+        String[] b = second[0].split("\\.");
+        for(int i = 0; i < Math.min(a.length, b.length); i++) {
+            if(Integer.parseInt(a[i]) != Integer.parseInt(b[i])) {
+                return Integer.compare(Integer.parseInt(a[i]), Integer.parseInt(b[i]));
             }
         }
-        if (locLeft == ' ') {
-            return 1;
-        }
-        else if (locRight == ' ') {
-            return -1;
-        }
-        return leftTmp.toString().compareTo(rightTmp);
+        return a.length - b.length;
     }
 }
-
