@@ -12,7 +12,7 @@ public class Builder {
         this.cost = -1F;
     }
 
-    public Builder(String name, int value1, float value2 ) {
+    public Builder(String name, int value1, float value2) {
         this.name = name;
         this.level = value1;
         this.cost = value2;

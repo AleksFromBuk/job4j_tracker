@@ -28,11 +28,11 @@ public class Point {
     }
 
     public static void main(String[] args) {
-        Point a = new Point(5,5);
-        Point b = new Point(2,1);
+        Point a = new Point(5, 5);
+        Point b = new Point(2, 1);
         System.out.println(a.distance(b));
-        Point aD = new Point(9,7,0);
-        Point bD = new Point(1,1,0);
+        Point aD = new Point(9, 7, 0);
+        Point bD = new Point(1, 1, 0);
         System.out.println(aD.distance3d(bD));
     }
 }

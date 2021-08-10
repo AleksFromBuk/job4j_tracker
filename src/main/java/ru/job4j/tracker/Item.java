@@ -54,22 +54,23 @@ public  class Item {
 
     }
 
-    public Item(int i, String filed_name) {
+    public Item(int i, String filedName) {
         this.id = i;
-        this.name = filed_name;
+        this.name = filedName;
     }
 
     public Item(String name) {
         this.name = name;
     }
 
-
     public int getId() {
         return id;
     }
+
     public void setId(int id) {
         this.id = id;
     }
+
     public String getName() {
         return name;
     }
@@ -80,8 +81,12 @@ public  class Item {
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
         Item item = (Item) o;
         return id == item.id && Objects.equals(name, item.name);
     }
@@ -93,9 +98,12 @@ public  class Item {
 
     @Override
     public String toString() {
-        return "Item{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                '}';
+        return "Item{"
+                + "id="
+                + id
+                + ", name='"
+                + name
+                + '\''
+                + '}';
     }
 }

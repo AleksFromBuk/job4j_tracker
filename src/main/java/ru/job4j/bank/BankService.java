@@ -32,7 +32,7 @@ public class BankService {
         User tmp = findByPassport(passport);
         if (tmp != null) {
             for (Account it : users.get(tmp)) {
-                if(it.getRequisite().equals(requisite)) {
+                if (it.getRequisite().equals(requisite)) {
                     return it;
                 }
             }

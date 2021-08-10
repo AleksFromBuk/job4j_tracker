@@ -8,7 +8,7 @@ import java.util.Date;
 public class LicenseTest {
 
     @Test
-    public void AllMethodsEq() {
+    public void allmethodsqq() {
         License first = new License();
         first.setCode("audio");
         Date tmp = new Date();
@@ -22,7 +22,6 @@ public class LicenseTest {
         second.setOwner("qwerty");
         assertThat(first, is(second));
     }
-
 
     @Test// - надо полагать, результат этого теста является ожидаемым
     public void eqName() {

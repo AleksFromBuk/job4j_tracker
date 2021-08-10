@@ -17,7 +17,7 @@ public class Tracker {
     public boolean delete(int id) {
         int index = indexOf(id);
         boolean result = index != -1;
-        if(result) {
+        if (result) {
             items.remove(index);
         }
         return result;
@@ -25,8 +25,8 @@ public class Tracker {
 
     private int indexOf(int id) {
         int rsl = -1;
-        for(int index = 0; index < items.size(); index++) {
-            if(items.get(index).getId() == id) {
+        for (int index = 0; index < items.size(); index++) {
+            if (items.get(index).getId() == id) {
                 rsl = index;
                 break;
             }
@@ -36,7 +36,7 @@ public class Tracker {
 
     public Item findById(int id) {
         int index = indexOf(id);
-        return index != - 1 ? items.get(index) : null;
+        return index != -1 ? items.get(index) : null;
     }
 
     public List<Item> findAll() {

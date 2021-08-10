@@ -8,7 +8,7 @@ public class Bus implements Vehicle {
 
     @Override
     public void identyObj() {
-        System.out.println("Средняя скорость движения в несколько " +
-                "в раз меньше средней скорости поездов");
+        System.out.println("Средняя скорость движения в несколько "
+                + "в раз меньше средней скорости поездов");
     }
 }

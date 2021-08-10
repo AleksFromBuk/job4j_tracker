@@ -23,7 +23,7 @@ public class Library {
         }
         System.out.println();
         for (int i = 0; i < data.length; i++) {
-            if(data[i].getName().equals("Clean Code")) {
+            if (data[i].getName().equals("Clean Code")) {
                 System.out.println(data[i].getName() + '\t' + data[i].getCount());
             }
         }

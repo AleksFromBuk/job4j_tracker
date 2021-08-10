@@ -17,7 +17,7 @@ public class NotifyAccountTest {
                 new Account("123", "Petr Arsentev", "eDer3432f"),
                 new Account("142", "Petr Arsentev", "000001")
         );
-        HashSet<Account> expect = new HashSet<> (
+        HashSet<Account> expect = new HashSet<>(
                 Arrays.asList(
                         new Account("123", "Petr Arsentev", "eDer3432f"),
                         new Account("142", "Petr Arsentev", "000001")
@@ -32,7 +32,7 @@ public class NotifyAccountTest {
                 new Account("123", "Petr Arsentev", "eDer3432f"),
                 new Account("123", "Petr Arsentev", "000001")
         );
-        HashSet<Account> expect = new HashSet<> (
+        HashSet<Account> expect = new HashSet<>(
                 Arrays.asList(
                         new Account("123", "Petr Arsentev", "eDer3432f")
                 )

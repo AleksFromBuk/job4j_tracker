@@ -14,12 +14,9 @@ public class PhoneDictionaryTest {
         phones.add(new Person("Petr", "Arsentev", "534872", "Bryansk"));
         phones.add(new Person("Petr", "surname", "0000001", "Sn.Petr"));
 
-
-
         ArrayList<Person> persons = phones.find("Petr");
-        assertThat(persons.get(0).getSurname(), is ("Arsentev"));
-        assertThat(persons.get(1).getPhone(), is ("0000001"));
-
+        assertThat(persons.get(0).getSurname(), is("Arsentev"));
+        assertThat(persons.get(1).getPhone(), is("0000001"));
     }
 
     @Test
@@ -28,7 +25,6 @@ public class PhoneDictionaryTest {
         phones.add(new Person("Petr", "Arsentev", "534872", "Bryansk"));
 
         ArrayList<Person> persons = phones.find("qwerty");
-        assertThat(persons.size(), is (0));
-
+        assertThat(persons.size(), is(0));
     }
 }

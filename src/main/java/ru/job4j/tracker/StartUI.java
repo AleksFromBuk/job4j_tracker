@@ -12,7 +12,7 @@ public class StartUI {
 
     public void init(Input input, Tracker tracker, List<UserAction> actions) {
         boolean run = true;
-        while(run) {
+        while (run) {
             this.showMenu(actions);
             int select = input.askInt("Select: ");
             if (select < 0 || select >= actions.size()) {

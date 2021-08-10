@@ -43,12 +43,14 @@ public class License {
 
     // сочетание alt + insert, выбираем equals и hashcode и
     // дальше все по умолчанию, не наод ничего дополнительно кликать
-
-
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
         License license = (License) o;
         return Objects.equals(owner, license.owner)
                 && Objects.equals(model, license.model)

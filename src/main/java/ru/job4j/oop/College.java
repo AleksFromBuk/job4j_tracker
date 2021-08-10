@@ -1,6 +1,6 @@
 package ru.job4j.oop;
 
-public class college {
+public class College {
     public static void main(String[] args) {
         Freshman fObj = new Freshman();
         Student sObj = fObj;

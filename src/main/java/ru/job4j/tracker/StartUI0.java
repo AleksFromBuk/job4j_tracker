@@ -17,7 +17,7 @@ public class StartUI {
 */
 package ru.job4j.tracker;
 
-public class StartUI_0 {
+public class StartUI0 {
     public static void main(String[] args) {
 //       Tracker example = new Tracker();
 //        Item elementFirst = example.add(new Item(3,"filed_name"));

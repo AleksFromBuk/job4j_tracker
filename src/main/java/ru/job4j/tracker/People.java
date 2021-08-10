@@ -6,9 +6,7 @@ public  class People {
     private String unusualSkills;
     private float currBalance;
 
-
     public People() {
-
     }
 
     public People(String name, String magic, float money) {

@@ -12,7 +12,7 @@ public class Dentist extends Doctor {
         this.cost = -1F;
     }
 
-    public Dentist(String name, int value1, float value2 ) {
+    public Dentist(String name, int value1, float value2) {
         this.name = name;
         this.level = value1;
         this.cost = value2;

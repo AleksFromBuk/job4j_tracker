@@ -12,7 +12,7 @@ public class Engineer extends Profession {
         this.cost = -1F;
     }
 
-    public Engineer(String name, int value1, float value2 ) {
+    public Engineer(String name, int value1, float value2) {
         this.name = name;
         this.level = value1;
         this.cost = value2;

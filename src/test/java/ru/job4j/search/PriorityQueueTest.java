@@ -30,7 +30,7 @@ public class PriorityQueueTest {
     }
 
     @Test
-    public void whenTheEndOfQueue () {
+    public void whenTheEndOfQueue() {
         PriorityQueue queue = new PriorityQueue();
         queue.put(new Task("low", 2));
         queue.put(new Task("urgent", 1));
@@ -42,7 +42,7 @@ public class PriorityQueueTest {
     }
 
     @Test
-    public void whenInsertBetween () {
+    public void whenInsertBetween() {
         PriorityQueue queue = new PriorityQueue();
         queue.put(new Task("low", 4));
         queue.put(new Task("urgent", 1));
@@ -52,6 +52,4 @@ public class PriorityQueueTest {
         Task result = queue.take();
         assertThat(result.getDesc(), is("middle"));
     }
-
-
 }

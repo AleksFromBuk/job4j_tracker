@@ -8,11 +8,10 @@ import org.junit.Test;
 import java.util.ArrayList;
 import java.util.List;
 
-
 public class StartUITest {
 
     @Test
-    public void WhenExit() {
+    public void whenexit() {
         Output out = new StubOutput();
         Input in = new StubInput(
                 new String[] {"0"}
@@ -23,13 +22,15 @@ public class StartUITest {
 
         new StartUI(out).init(in, tracker, actions);
         assertThat(out.toString(), is(
-                "Menu." + System.lineSeparator() +
-                        "0.=== Exit ===" + System.lineSeparator()
+                "Menu."
+                        + System.lineSeparator()
+                        + "0.=== Exit ==="
+                        + System.lineSeparator()
         ));
     }
 
     @Test
-    public void WhenFindByIdAction() {
+    public void whenfindbyIdaction() {
         Output out = new StubOutput();
         Input in = new StubInput(
                 new String[] {"0", "1", "1"}
@@ -43,18 +44,26 @@ public class StartUITest {
         Item item = tracker.add(new Item("testForTest"));
         new StartUI(out).init(in, tracker, actions);
         assertThat(out.toString(), is(
-                "Menu." + System.lineSeparator() +
-                        "0.=== find item by id ===" + System.lineSeparator() +
-                        "1.=== Exit ===" + System.lineSeparator() +
-                          "result: " + item + System.lineSeparator() +
-                        "Menu." + System.lineSeparator() +
-                        "0.=== find item by id ===" + System.lineSeparator() +
-                        "1.=== Exit ===" + System.lineSeparator()
+                "Menu."
+                        + System.lineSeparator()
+                        + "0.=== find item by id ==="
+                        + System.lineSeparator()
+                        + "1.=== Exit ==="
+                        + System.lineSeparator()
+                        + "result: "
+                        + item
+                        + System.lineSeparator()
+                        + "Menu."
+                        + System.lineSeparator()
+                        + "0.=== find item by id ==="
+                        + System.lineSeparator()
+                        + "1.=== Exit ==="
+                        + System.lineSeparator()
         ));
     }
 
     @Test
-    public void WhenFindByNameAction() {
+    public void whenfindbynameaction() {
         Output out = new StubOutput();
         Input in = new StubInput(
                 new String[] {"0", "testName", "1"}
@@ -68,18 +77,24 @@ public class StartUITest {
         Item item = tracker.add(new Item("testName"));
         new StartUI(out).init(in, tracker, actions);
         assertThat(out.toString(), is(
-                "Menu." + System.lineSeparator() +
-                        "0.=== find items by name ===" + System.lineSeparator() +
-                        "1.=== Exit ===" + System.lineSeparator() +
-                        item + System.lineSeparator() +
-                        "Menu." + System.lineSeparator() +
-                        "0.=== find items by name ===" + System.lineSeparator() +
-                        "1.=== Exit ===" + System.lineSeparator()
+                "Menu."
+                        + System.lineSeparator()
+                        + "0.=== find items by name ==="
+                        + System.lineSeparator()
+                        + "1.=== Exit ==="
+                        + System.lineSeparator()
+                        + item + System.lineSeparator()
+                        + "Menu."
+                        + System.lineSeparator()
+                        + "0.=== find items by name ==="
+                        + System.lineSeparator()
+                        + "1.=== Exit ==="
+                        + System.lineSeparator()
         ));
     }
 
     @Test
-    public void WhenFindAllAction() {
+    public void whenfindAllaction() {
         Output out = new StubOutput();
         Input in = new StubInput(
                 new String[] {"0", "1"}
@@ -94,20 +109,25 @@ public class StartUITest {
 
         new StartUI(out).init(in, tracker, actions);
         assertThat(out.toString(), is(
-                "Menu." + System.lineSeparator() +
-                        "0.=== Show all items ===" + System.lineSeparator() +
-                        "1.=== Exit ===" + System.lineSeparator() +
-                        item1 + System.lineSeparator() +
-                        item2 + System.lineSeparator() +
-                        "Menu." + System.lineSeparator() +
-                        "0.=== Show all items ===" + System.lineSeparator() +
-                        "1.=== Exit ===" + System.lineSeparator()
+                "Menu."
+                        + System.lineSeparator()
+                        + "0.=== Show all items ==="
+                        + System.lineSeparator()
+                        + "1.=== Exit ==="
+                        + System.lineSeparator()
+                        + item1 + System.lineSeparator()
+                        + item2 + System.lineSeparator()
+                        + "Menu." + System.lineSeparator()
+                        + "0.=== Show all items ==="
+                        + System.lineSeparator()
+                        + "1.=== Exit ==="
+                        + System.lineSeparator()
         ));
     }
 
-    @Test public void whenInvalidExit() {
+    @Test public void wheninvalidexit() {
         Output out = new StubOutput();
-        Input in = new StubInput (
+        Input in = new StubInput(
                 new String[] {"-1", "0"}
         );
         Tracker tracker = new Tracker();
@@ -115,14 +135,18 @@ public class StartUITest {
 
         actions.add(new Exit());
 
-        new StartUI(out).init(in, tracker,actions);
+        new StartUI(out).init(in, tracker, actions);
         String ln = System.lineSeparator();
         assertThat(out.toString(), is(
                 "Menu." + ln
-                        + "0.=== Exit ===" + ln
-                        + "Wrong input, you can select: 0 .. 0" + ln
-                        + "Menu." + ln
-                        + "0.=== Exit ===" + ln
+                        + "0.=== Exit ==="
+                        + ln
+                        + "Wrong input, you can select: 0 .. 0"
+                        + ln
+                        + "Menu."
+                        + ln
+                        + "0.=== Exit ==="
+                        + ln
                 )
         );
     }

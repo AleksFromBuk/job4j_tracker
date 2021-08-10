@@ -24,6 +24,4 @@ public class PassportOfficeTest {
         boolean add = office.add(first);
         assertFalse(office.add(second));
     }
-
-
 }

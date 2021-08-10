@@ -14,7 +14,8 @@
 //        if(position < 100) {
 //            this.answers[position++] = ans;
 //        } else {
-//            System.out.println("the array of this instance is overflowed...Create another instance of \"AnotherInput\"");
+//            System.out.println("the array of this instance is overflowed...
+//            Create another instance of \"AnotherInput\"");
 //        }
 //        return ans;
 //    }
