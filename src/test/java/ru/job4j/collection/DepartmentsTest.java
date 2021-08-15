@@ -36,10 +36,10 @@ public class DepartmentsTest {
 
     @Test
     public void naturalOrderSortWithFillGaps() {
-        List<String> input = Departments.fillGaps(Arrays.asList("K2/SK1/SSK1", "K2/SK1/SSK2", "K2/SK2",
-                "K1/SK1/SSK1", "K1/SK1/SSK2", "K1/SK2"));
-        List<String> expected = Arrays.asList("K1", "K1/SK1", "K1/SK1/SSK1", "K1/SK1/SSK2", "K1/SK2",
-                "K2", "K2/SK1", "K2/SK1/SSK1", "K2/SK1/SSK2", "K2/SK2");
+        List<String> input = Departments.fillGaps(Arrays.asList("K2/SK1/SSK1", "K2/SK1/SSK2",
+                "K2/SK2", "K1/SK1/SSK1", "K1/SK1/SSK2", "K1/SK2"));
+        List<String> expected = Arrays.asList("K1", "K1/SK1", "K1/SK1/SSK1", "K1/SK1/SSK2",
+                "K1/SK2", "K2", "K2/SK1", "K2/SK1/SSK1", "K2/SK1/SSK2", "K2/SK2");
         Departments.sortAsc(input);
         assertThat(expected, is(input));
     }
@@ -51,6 +51,7 @@ public class DepartmentsTest {
 
         List<String> expected = Arrays.asList("K2", "K2/SK1", "K2/SK1/SSK1", "K2/SK1/SSK2", "K1",
                 "K1/SK1", "K1/SK1/SSK1", "K1/SK1/SSK2", "K1/SK2");
+
         Departments.sortDesc(input);
         assertThat(input, is(expected));
     }
