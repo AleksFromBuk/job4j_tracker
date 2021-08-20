@@ -8,6 +8,7 @@ import static org.junit.Assert.*;
 
 public class DepDescCompTest {
 
+
     @Test
     public void compare() {
         int rsl = new DepDescComp().compare(
