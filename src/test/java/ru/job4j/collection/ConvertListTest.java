@@ -10,7 +10,6 @@ import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.*;
 
 public class ConvertListTest {
-
     @Test
     public void whenTwoList() {
         List<int[]> in = new ArrayList<>();
