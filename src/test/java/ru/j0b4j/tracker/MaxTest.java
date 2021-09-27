@@ -20,10 +20,10 @@ public class MaxTest {
         Assert.assertEquals(expected, out);
     }
 
-    @Test
-    public void testMax1() {
-        int expected = 7;
-        int out = Max.max(1, 3, 5, 7);
-        Assert.assertEquals(out, expected);
-    }
+//    @Test
+//    public void testMax1() {
+//        int expected = 7;
+//        int out = Max.max(1, 3, 5, 7);
+//        Assert.assertEquals(out, expected);
+//    }
 }
