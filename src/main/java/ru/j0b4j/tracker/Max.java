@@ -5,6 +5,7 @@ public class Max {
     public static int max(int a, int b) {
         return a >= b ? a : b;
     }
+
     public static int max(int a, int b, int c) {
         return max(a, max(c, b));
     }
@@ -14,7 +15,7 @@ public class Max {
     }
 
     public static int max(int...v) {
-        if(v.length == 0) {
+        if (v.length == 0) {
             System.out.println("array is empty");
             return -1;
         } else {
@@ -27,6 +28,7 @@ public class Max {
             return ans;
         }
     }
+
     public static void main(String[] args) {
       System.out.println(max(3, 4, 1, 2, -17, 25));
         System.out.println(max(3, 4, 1, 2, -17, 25, 100));
