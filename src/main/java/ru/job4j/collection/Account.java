@@ -17,7 +17,7 @@ public class Account {
 
     public boolean equals(Object o) {
         if (this == o) {
-            return true; // <- эта форма приведена в текущем шаге
+            return true;
         }
         if (o == null || getClass() != o.getClass()) {
             return false;

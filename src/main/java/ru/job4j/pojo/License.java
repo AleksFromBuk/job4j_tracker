@@ -41,8 +41,6 @@ public class License {
         this.created = created;
     }
 
-    // сочетание alt + insert, выбираем equals и hashcode и
-    // дальше все по умолчанию, не наод ничего дополнительно кликать
     @Override
     public boolean equals(Object o) {
         if (this == o) {

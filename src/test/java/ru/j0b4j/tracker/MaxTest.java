@@ -2,7 +2,6 @@ package ru.j0b4j.tracker;
 
 import org.junit.Assert;
 import org.junit.Test;
-//import static org.junit.Assert;
 
 public class MaxTest {
 
@@ -19,11 +18,4 @@ public class MaxTest {
         int out = Max.max(1, 2, 3);
         Assert.assertEquals(expected, out);
     }
-
-//    @Test
-//    public void testMax1() {
-//        int expected = 7;
-//        int out = Max.max(1, 3, 5, 7);
-//        Assert.assertEquals(out, expected);
-//    }
 }

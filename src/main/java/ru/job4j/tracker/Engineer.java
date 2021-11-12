@@ -32,7 +32,6 @@ public class Engineer extends Profession {
 
     public boolean mayNotMay(People mrG) {
         boolean rsl = false;
-        //............
         return rsl;
     }
 

@@ -21,7 +21,6 @@ public class FindItemById implements UserAction {
         } else {
             out.println("result: " + rsl);
         }
-        //out.println("");
         return true;
     }
 }

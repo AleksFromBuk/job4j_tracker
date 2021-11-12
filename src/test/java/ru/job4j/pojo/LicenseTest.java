@@ -23,7 +23,7 @@ public class LicenseTest {
         assertThat(first, is(second));
     }
 
-    @Test// - надо полагать, результат этого теста является ожидаемым
+    @Test
     public void eqName() {
         License first = new License();
         first.setCode("audio");

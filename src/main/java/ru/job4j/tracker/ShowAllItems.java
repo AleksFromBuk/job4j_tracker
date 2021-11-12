@@ -17,7 +17,6 @@ public class ShowAllItems implements UserAction {
 
     @Override
     public boolean execute(Input input, Tracker tracker) {
-        //Item[] inf = tracker.findAll();
         List<Item> inf = tracker.findAll();
         if (inf.size() == 0) {
             out.println("items not found...");
@@ -27,7 +26,6 @@ public class ShowAllItems implements UserAction {
                 out.println(i);
             }
         }
-        //out.println("");
         return true;
     }
 }
