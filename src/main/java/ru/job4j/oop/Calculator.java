@@ -8,12 +8,12 @@ public class Calculator {
         return x + y;
     }
 
-    public int multiply(int a) {
-        return x * a;
+    public static int minus(int a) {
+        return a - x;
     }
 
-    public int minus(int a) {
-        return a - x;
+    public int multiply(int a) {
+        return x * a;
     }
 
     public int divide(int a) {
@@ -28,8 +28,8 @@ public class Calculator {
     public static void main(String[] args) {
         Calculator exmpl = new Calculator();
         System.out.println(sum(4));
+        System.out.println(minus(4));
         System.out.println(exmpl.multiply(4));
-        System.out.println(exmpl.minus(4));
         System.out.println(exmpl.divide(4));
         System.out.println(exmpl.sumAllOperation(4));
     }
