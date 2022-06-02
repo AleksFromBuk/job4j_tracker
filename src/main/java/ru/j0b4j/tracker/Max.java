@@ -30,8 +30,9 @@ public class Max {
     }
 
     public static void main(String[] args) {
-      System.out.println(max(3, 4, 1, 2, -17, 25));
-        System.out.println(max(3, 4, 1, 2, -17, 25, 100));
 
+        for (int i = 0; ; i++) {
+            System.out.println(i);
+        }
     }
 }
