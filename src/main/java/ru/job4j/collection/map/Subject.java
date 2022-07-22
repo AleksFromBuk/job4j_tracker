@@ -27,7 +27,7 @@ public final class Subject {
         if (obj == null || obj.getClass() != this.getClass()) {
             return false;
         }
-        var that = (Subject) obj;
+        Subject that = (Subject) obj;
         return Objects.equals(this.name, that.name)
                 && this.score == that.score;
     }

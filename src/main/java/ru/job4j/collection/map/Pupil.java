@@ -27,7 +27,7 @@ public final class Pupil {
         if (obj == null || obj.getClass() != this.getClass()) {
             return false;
         }
-        var that = (Pupil) obj;
+        Pupil that = (Pupil) obj;
         return Objects.equals(this.name, that.name)
                 && Objects.equals(this.subjects, that.subjects);
     }

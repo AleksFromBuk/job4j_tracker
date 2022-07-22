@@ -32,7 +32,7 @@ public final class Label implements Comparable<Label> {
         if (obj == null || obj.getClass() != this.getClass()) {
             return false;
         }
-        var that = (Label) obj;
+        Label that = (Label) obj;
         return Objects.equals(this.name, that.name)
                 && Double.doubleToLongBits(this.score) == Double.doubleToLongBits(that.score);
     }
