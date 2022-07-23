@@ -36,11 +36,8 @@ public class AnalyzeByMap {
         int cnt = pupils.size();
         for (Pupil it1 : pupils) {
             for (Subject it2 : it1.subjects()) {
-                if (tmpResult.containsKey(it2.name())) {
-                    tmpResult.put(it2.name(), tmpResult.get(it2.name()) + it2.score());
-                } else {
-                    tmpResult.put(it2.name(), it2.score());
-                }
+                tmpResult.computeIfPresent(it2.name(), (a, b) -> b + it2.score());
+               tmpResult.putIfAbsent(it2.name(), it2.score());
             }
         }
 
@@ -70,11 +67,8 @@ public class AnalyzeByMap {
         double avr = 0;
         for (Pupil it1 : pupils) {
             for (Subject it2 : it1.subjects()) {
-                if (tmpResult.containsKey(it2.name())) {
-                    tmpResult.put(it2.name(), tmpResult.get(it2.name()) + it2.score());
-                } else {
-                    tmpResult.put(it2.name(), it2.score());
-                }
+                tmpResult.computeIfPresent(it2.name(), (a, b) -> b + it2.score());
+                tmpResult.putIfAbsent(it2.name(), it2.score());
             }
         }
         List<Label> ans = new ArrayList<>();
