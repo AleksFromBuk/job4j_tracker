@@ -1,4 +1,4 @@
-package ru.job4j.lambda;
+package ru.job4j.function.lambda;
 
 import java.util.Arrays;
 import java.util.Comparator;

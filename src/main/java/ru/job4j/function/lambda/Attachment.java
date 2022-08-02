@@ -1,4 +1,4 @@
-package ru.job4j.lambda;
+package ru.job4j.function.lambda;
 
 public class Attachment {
     private String name;
