@@ -10,26 +10,27 @@ public class PassportValidator {
             throw new IllegalArgumentException("nothing to check");
         }
         if (!(password.length() >= 8 && password.length() <= 32)) {
-            return "incorrect password length";
+            throw new IllegalArgumentException("incorrect password length");
         }
         if (!checkUpperCase(password)) {
-            return "Password must "
-                    + "contain at least one uppercase character";
+            throw new IllegalArgumentException("Password must "
+                    + "contain at least one uppercase character");
         }
         if (!checkLowerCase(password)) {
-            return "Password must "
-                    + "contain at least one lowercase character";
+            throw new IllegalArgumentException("Password must "
+                    + "contain at least one lowercase character");
         }
         if (!checkNumber(password)) {
-            return "Password contains at least one number";
+            throw new IllegalArgumentException("Password contains at least one number");
         }
         if (!checkNotDigitAndNotLetter(password)) {
-            return "The password must contain at least one "
-                    + "special character. character is not a digit or letter";
+            throw new IllegalArgumentException("The password must contain at least one "
+                    + "special character. character is not a digit or letter");
         }
         if (!checkConstSubstr(password)) {
-            return "The password does not contain case-insensitive substrings:"
-                    + " \"qwerty\", \"12345\", \"password\", \"admin\", \"user\"";
+            throw new IllegalArgumentException("The password does not contain"
+                    + " case-insensitive substrings:"
+                    + " \"qwerty\", \"12345\", \"password\", \"admin\", \"user\"");
         }
         return "password is correct!";
     }
