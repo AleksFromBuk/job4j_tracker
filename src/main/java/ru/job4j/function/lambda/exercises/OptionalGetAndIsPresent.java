@@ -3,7 +3,6 @@ package ru.job4j.function.lambda.exercises;
 import java.util.Optional;
 
 public class OptionalGetAndIsPresent {
-
     public static int get(int[] data, int el) {
         Optional<Integer> ans = indexOf(data, el);
         return ans.isEmpty() ? -1 : ans.get();
