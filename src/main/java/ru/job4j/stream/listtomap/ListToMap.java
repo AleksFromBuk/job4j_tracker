@@ -11,8 +11,8 @@ public class ListToMap {
                 .collect(
                         Collectors.toMap(
                                 Student::getSurname,
-                                Student -> Student,
-                                        (existing, replacemnet) -> existing
+                                student -> student,
+                                (existing, replacemnet) -> existing
                         ));
     }
 }
