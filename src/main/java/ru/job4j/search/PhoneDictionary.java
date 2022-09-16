@@ -4,15 +4,15 @@ import java.util.ArrayList;
 import java.util.function.Predicate;
 
 public class PhoneDictionary {
-    private ArrayList<Person> persons = new ArrayList<Person>();
+    private ArrayList<Person> persons = new ArrayList<>();
 
     public void add(Person person) {
         this.persons.add(person);
     }
 
     public ArrayList<Person> oldFindMethod(String key) {
-        ArrayList<Person> result = new ArrayList<Person>();
-        for (Person val : persons) {
+        var result = new ArrayList<Person>();
+        for (var val : persons) {
             if (val.getName().contains(key) || val.getSurname().contains(key)
                     || val.getPhone().contains(key)   || val.getAddress().contains(key)) {
                 result.add(val);
@@ -27,8 +27,8 @@ public class PhoneDictionary {
         Predicate<Person> third = (s) -> s.getPhone().contains(key);
         Predicate<Person> last = (s) -> s.getAddress().contains(key);
         Predicate<Person> combine = first.or(second.or(third).or(last));
-        ArrayList<Person> result = new ArrayList<>();
-        for (Person person : persons) {
+        var result = new ArrayList<Person>();
+        for (var person : persons) {
             if (combine.test(person)) {
                 result.add(person);
             }
