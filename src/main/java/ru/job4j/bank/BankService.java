@@ -1,9 +1,6 @@
 package ru.job4j.bank;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 /**
  * Главный сервис. Класс описывает работу банковской системы.
@@ -25,7 +22,19 @@ public class BankService {
      * По умолчанию, с пользователем добавляется пустой список - new ArrayList<Account>()
      */
     public void addUser(User user) {
-        users.putIfAbsent(user, new ArrayList<Account>());
+        users.putIfAbsent(user, new ArrayList<>());
+    }
+
+    public boolean deleteUser(String passport) {
+        boolean ans = false;
+        User candidateUser;
+        for (User it : users.keySet()) {
+            if (it.getPassport().equals(passport)) {
+                candidateUser = it;
+                ans = users.remove(candidateUser, new ArrayList<>());
+            }
+        }
+        return ans;
     }
 
     /**
@@ -100,5 +109,9 @@ public class BankService {
             rsl = true;
         }
         return rsl;
+    }
+
+    public List<Account> getAccounts(User user) {
+        return users.get(user);
     }
 }
