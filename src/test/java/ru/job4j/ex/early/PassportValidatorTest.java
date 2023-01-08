@@ -44,7 +44,7 @@ class PassportValidatorTest {
                 () -> {
                     PassportValidator.validate("ASDF%G2342HJKL");
                 });
-        assertThat(exception.getMessage()).isEqualTo( "Password must "
+        assertThat(exception.getMessage()).isEqualTo("Password must "
                 + "contain at least one lowercase character");
     }
 
@@ -55,7 +55,7 @@ class PassportValidatorTest {
                 () -> {
                     PassportValidator.validate("ASD^FGasdHJKL");
                 });
-        assertThat(exception.getMessage()).isEqualTo( "Password "
+        assertThat(exception.getMessage()).isEqualTo("Password "
                 + "contains at least one number");
     }
 
@@ -66,7 +66,7 @@ class PassportValidatorTest {
                 () -> {
                     PassportValidator.validate("ASD333FGasdHJKL");
                 });
-        assertThat(exception.getMessage()).isEqualTo( "The password must "
+        assertThat(exception.getMessage()).isEqualTo("The password must "
                 + "contain at least one "
                 + "special character. character is not a digit or letter");
     }
@@ -86,7 +86,7 @@ class PassportValidatorTest {
     @Test
     public void whenAllCorrect() {
         String result = PassportValidator.validate("@ASD333FGasdHJKL");
-        assertThat(result).isEqualTo( "password is correct!");
+        assertThat(result).isEqualTo("password is correct!");
     }
 
 }
