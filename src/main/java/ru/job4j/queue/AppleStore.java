@@ -20,12 +20,11 @@ public class AppleStore {
     }
 
     public String calculate(int cnt) {
-        String res = null;
         Customer tmp = null;
-        for (int i = 0; i < cnt; i++) {
-            tmp = queue.poll();
-            res = tmp != null ? tmp.getName() : null;
+        for (int i = 0; i < cnt - 1; i++) {
+            queue.poll();
         }
-        return res;
+        tmp = queue.poll();
+        return  tmp != null ? tmp.getName() : null;
     }
 }
